@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: multicontainer-app
+  name: mc1
 spec:
   volumes:
   - name: html
     emptyDir: {}
   containers:
-  - name: container1
+  - name: 1st
     image: nginx
     volumeMounts:
     - name: html
       mountPath: /usr/share/nginx/html
-  - name: container2
+  - name: 2nd
     image: debian
     volumeMounts:
     - name: html
