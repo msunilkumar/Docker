@@ -7,9 +7,9 @@ pipeline{
             steps{
                 sshagent(['k8s-master']) {
                     script{
-                        sh "kubectl run neonomics-app --image=sunil4356/neonomicsapp:0.0.1"
+                        sh "kubectl run neonomics-app --image=sunil4356/neonomicsapp"
                         sleep 10
-                        sh "kubectl expose pod/neonomics-app --name=neonomics-svc --type=NodePort --port 8083 "
+                        sh "kubectl expose pod/neonomics-app --name=neonomics-svc --type=NodePort --port 8080 "
                     }
                 }
             }
